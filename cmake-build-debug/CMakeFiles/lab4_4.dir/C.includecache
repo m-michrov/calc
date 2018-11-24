@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-E:/CLionProjects/lab4-4/calculate.c
-calculate.h
-E:/CLionProjects/lab4-4/calculate.h
-
-E:/CLionProjects/lab4-4/calculate.h
-stdlib.h
--
-math.h
--
-stack.h
-E:/CLionProjects/lab4-4/stack.h
-convert.h
-E:/CLionProjects/lab4-4/convert.h
-definitions.h
-E:/CLionProjects/lab4-4/definitions.h
-
 E:/CLionProjects/lab4-4/convert.c
 convert.h
 E:/CLionProjects/lab4-4/convert.h
@@ -44,16 +28,6 @@ stdio.h
 stack.h
 E:/CLionProjects/lab4-4/stack.h
 
-E:/CLionProjects/lab4-4/definitions.h
-
-E:/CLionProjects/lab4-4/main.c
-stdio.h
--
-convert.h
-E:/CLionProjects/lab4-4/convert.h
-calculate.h
-E:/CLionProjects/lab4-4/calculate.h
-definitions.h
 E:/CLionProjects/lab4-4/definitions.h
 
 E:/CLionProjects/lab4-4/stack.h

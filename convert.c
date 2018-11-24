@@ -43,7 +43,7 @@ TElement * convertToPostfix(
     if (list == NULL)
         MEMORY_ERROR;
 
-    char operator_stack[BLOCK_SIZE];
+    char operator_stack[BLOCK_SIZE] = { 0 };
 
     unsigned int list_position = 0;
     unsigned int position = 0;
@@ -77,12 +77,18 @@ TElement * convertToPostfix(
             pop the operator from the operator stack onto the output queue.
         pop the left bracket from the stack.
 
-        *//* if the stack runs out without finding a left bracket, then there are mismatched parentheses. *//*
+        */
+    /* if the stack runs out without finding a left bracket, then there are mismatched parentheses.
+     * */
+    /*
  *
     if there are no more tokens to read:
     while there are still operator tokens on the stack:
 
-    *//* if the operator token on the top of the stack is a bracket, then there are mismatched parentheses. *//*
+    */
+    /* if the operator token on the top of the stack is a bracket, then there are mismatched parentheses.
+     * */
+    /*
  *
     pop the operator from the operator stack onto the output queue.
     exit.
@@ -90,7 +96,7 @@ TElement * convertToPostfix(
 
     while (string[position] != '\n') {
 
-        if (isdigit(string[position])) {
+        if (isdigit(string[position])) { // handling numbers
 
             if (last_item == LAST_NUMBER || last_item == LAST_CLOSE_BRACKET)
                 SYNTAX_ERROR;
@@ -106,10 +112,10 @@ TElement * convertToPostfix(
                 position++;
             }
 
-            if (string[position] == DOT) { // if the is a dot, it could be a double value
+            if (string[position] == DOT) { // handling rational number
                 position++;
 
-                unsigned int decimal_count = 0; // number of digits in decimal part
+                unsigned int decimal_count = 0;
 
                 while (isdigit(string[position])) {
 
@@ -121,13 +127,10 @@ TElement * convertToPostfix(
                     position++;
                 }
 
-                if (decimal_count == 0) // no digits after the dot = syntax error
+                if (decimal_count == 0)
                     SYNTAX_ERROR;
 
-                /*
-                 * ||| number / 10 ^ decimal_count, so i don't have to store double values and operators separately
-                 * vvv
-                 */
+                // writing rational number in the Scientific notation ( a / 10^k ) in Postfix notation ( a 10 k ^ / )
 
                 list_position = push(list, list_position, number, NUMBER);
 
@@ -149,6 +152,7 @@ TElement * convertToPostfix(
             position--;
 
             last_item = LAST_NUMBER;
+
         }
 
         else if (is_operator(string[position])) {
@@ -160,12 +164,12 @@ TElement * convertToPostfix(
                     list_position = push(list, list_position, 0, NUMBER);
 
                 }
-                else SYNTAX_ERROR;
+                else
+                    SYNTAX_ERROR;
             }
 
-            if (last_item == LAST_OPERATOR) {
+            if (last_item == LAST_OPERATOR)
                 SYNTAX_ERROR;
-            }
 
             while (priority(string[position]) < priority(operator_stack[operator_stack_len - 1]) ||
                    (priority(string[position]) == priority(operator_stack[operator_stack_len - 1]) &&
@@ -185,9 +189,8 @@ TElement * convertToPostfix(
 
         else if (string[position] == OPEN_BRACKET) {
 
-            if (last_item == LAST_NUMBER) {
+            if (last_item == LAST_NUMBER)
                 SYNTAX_ERROR;
-            }
 
             operator_stack[operator_stack_len] = string[position];
 
@@ -228,7 +231,8 @@ TElement * convertToPostfix(
 
         }
 
-        else if (string[position] == SPACE);
+        else if (string[position] == SPACE)
+            ;
 
         else
             SYNTAX_ERROR;
