@@ -10,7 +10,7 @@
 #include "convert.h"
 #include "definitions.h"
 
-#define DIVISION_ERROR {printf("division by zero error\n"); free(list); exit(EXIT_SUCCESS);}
+#define DIVISION_ERROR {printf("division by zero\n"); free(list); exit(EXIT_SUCCESS);}
 
 double calculatePostfix(
         TElement * list);
