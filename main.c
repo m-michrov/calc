@@ -4,7 +4,7 @@
 #include "convert.h"
 #include "calculate.h"
 
-int main() {
+int main(void) {
 
     char input[BLOCK_SIZE];
 
