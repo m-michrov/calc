@@ -1,8 +1,8 @@
 #include <stdio.h>
 
+#include "definitions.h"
 #include "convert.h"
 #include "calculate.h"
-#include "definitions.h"
 
 int main() {
 

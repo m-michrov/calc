@@ -11,52 +11,52 @@ double calculatePostfix(
 
     unsigned int operand_stack_len = 0;
     unsigned int stack_position = 0;
-    double operand_uno;
-    double operand_duo;
+    double first_operand;
+    double second_operand;
 
-    while (!(list[stack_position].is_operator == OPERATOR && list[stack_position].value == 0)) {
+    while (!(list[stack_position].type == OPERATOR && list[stack_position].value == 0)) {
 
 
-        if (list[stack_position].is_operator == NUMBER) {
+        if (list[stack_position].type == NUMBER) {
             operand_stack[operand_stack_len] = list[stack_position].value;
             operand_stack_len++;
 
         }
 
         else {
-            operand_duo = operand_stack[operand_stack_len - 1];
+            second_operand = operand_stack[operand_stack_len - 1];
 
             operand_stack_len--;
 
-            operand_uno = operand_stack[operand_stack_len - 1];
+            first_operand = operand_stack[operand_stack_len - 1];
 
             switch (list[stack_position].value)
             {
                 case ADD: {
-                    operand_stack[operand_stack_len - 1] = operand_uno + operand_duo;
+                    operand_stack[operand_stack_len - 1] = first_operand + second_operand;
                     break;
                 }
 
                 case SUB: {
-                    operand_stack[operand_stack_len - 1] = operand_uno - operand_duo;
+                    operand_stack[operand_stack_len - 1] = first_operand - second_operand;
                     break;
                 }
 
                 case DIV: {
-                    if (!operand_duo)
+                    if (!second_operand)
                     DIVISION_ERROR;
 
-                    operand_stack[operand_stack_len - 1] = operand_uno / operand_duo;
+                    operand_stack[operand_stack_len - 1] = first_operand / second_operand;
                     break;
                 }
 
                 case MUL: {
-                    operand_stack[operand_stack_len - 1] = operand_uno * operand_duo;
+                    operand_stack[operand_stack_len - 1] = first_operand * second_operand;
                     break;
                 }
 
                 case POW: {
-                    operand_stack[operand_stack_len - 1] = pow(operand_uno, operand_duo);
+                    operand_stack[operand_stack_len - 1] = pow(first_operand, second_operand);
                     break;
                 }
 

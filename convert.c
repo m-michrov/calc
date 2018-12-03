@@ -116,7 +116,7 @@ TElement * convertToPostfix(
 
             if (last_item == LAST_START_FILE || last_item == LAST_OPEN_BRACKET) {
 
-                if (string[position] == '+' || string[position] == '-') {
+                if (string[position] == ADD || string[position] == SUB) {
 
                     list_position = push(list, list_position, 0, NUMBER);
 

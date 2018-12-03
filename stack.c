@@ -4,10 +4,10 @@ unsigned int push(
         TElement *list,
         unsigned int stack_pos,
         int value,
-        bool is_operator)
+        bool type)
 {
 
-    TElement item = { value, is_operator };
+    TElement item = { value, type };
 
     list[stack_pos] = item;
 

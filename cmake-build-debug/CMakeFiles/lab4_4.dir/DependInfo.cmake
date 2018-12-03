@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "E:/CLionProjects/lab4-4/calculate.c" "E:/CLionProjects/lab4-4/cmake-build-debug/CMakeFiles/lab4_4.dir/calculate.c.obj"
-  "E:/CLionProjects/lab4-4/convert.c" "E:/CLionProjects/lab4-4/cmake-build-debug/CMakeFiles/lab4_4.dir/convert.c.obj"
-  "E:/CLionProjects/lab4-4/main.c" "E:/CLionProjects/lab4-4/cmake-build-debug/CMakeFiles/lab4_4.dir/main.c.obj"
-  "E:/CLionProjects/lab4-4/stack.c" "E:/CLionProjects/lab4-4/cmake-build-debug/CMakeFiles/lab4_4.dir/stack.c.obj"
+  "H:/NSUProgLabs/lab4-4/calculate.c" "H:/NSUProgLabs/lab4-4/cmake-build-debug/CMakeFiles/lab4_4.dir/calculate.c.obj"
+  "H:/NSUProgLabs/lab4-4/convert.c" "H:/NSUProgLabs/lab4-4/cmake-build-debug/CMakeFiles/lab4_4.dir/convert.c.obj"
+  "H:/NSUProgLabs/lab4-4/main.c" "H:/NSUProgLabs/lab4-4/cmake-build-debug/CMakeFiles/lab4_4.dir/main.c.obj"
+  "H:/NSUProgLabs/lab4-4/stack.c" "H:/NSUProgLabs/lab4-4/cmake-build-debug/CMakeFiles/lab4_4.dir/stack.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

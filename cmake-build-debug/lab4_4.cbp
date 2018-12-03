@@ -8,99 +8,99 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="E:/CLionProjects/lab4-4/cmake-build-debug"/>
+				<Option working_dir="H:/NSUProgLabs/lab4-4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lab4_4">
-				<Option output="E:/CLionProjects/lab4-4/cmake-build-debug/lab4_4.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/CLionProjects/lab4-4/cmake-build-debug"/>
+				<Option output="H:/NSUProgLabs/lab4-4/cmake-build-debug/lab4_4.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="H:/NSUProgLabs/lab4-4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="E:/Win-builds/include"/>
-					<Add directory="e:\win-builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
-					<Add directory="e:\win-builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
-					<Add directory="e:\win-builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C://Program Files//Haskell Platform//8.4.3//mingw//bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/include"/>
+					<Add directory="C://Program Files//Haskell Platform//8.4.3//mingw//bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/Haskell Platform/8.4.3/mingw/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/Haskell Platform/8.4.3/mingw/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 lab4_4"/>
-					<CompileFile command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 lab4_4"/>
+					<CompileFile command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lab4_4/fast">
-				<Option output="E:/CLionProjects/lab4-4/cmake-build-debug/lab4_4.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/CLionProjects/lab4-4/cmake-build-debug"/>
+				<Option output="H:/NSUProgLabs/lab4-4/cmake-build-debug/lab4_4.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="H:/NSUProgLabs/lab4-4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="E:/Win-builds/include"/>
-					<Add directory="e:\win-builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include"/>
-					<Add directory="e:\win-builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"/>
-					<Add directory="e:\win-builds\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C://Program Files//Haskell Platform//8.4.3//mingw//bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/include"/>
+					<Add directory="C://Program Files//Haskell Platform//8.4.3//mingw//bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/Haskell Platform/8.4.3/mingw/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/Haskell Platform/8.4.3/mingw/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 lab4_4/fast"/>
-					<CompileFile command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 lab4_4/fast"/>
+					<CompileFile command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="E:/CLionProjects/lab4-4/cmake-build-debug"/>
+				<Option working_dir="H:/NSUProgLabs/lab4-4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="E:/CLionProjects/lab4-4/cmake-build-debug"/>
+				<Option working_dir="H:/NSUProgLabs/lab4-4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/Win-builds/bin/mingw32-make.exe -f &quot;E:/CLionProjects/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/tools/mingw64/bin/mingw32-make.exe -f &quot;H:/NSUProgLabs/lab4-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/CLionProjects/lab4-4/calculate.c">
+		<Unit filename="H:/NSUProgLabs/lab4-4/calculate.c">
 			<Option target="lab4_4"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/lab4-4/calculate.h">
+		<Unit filename="H:/NSUProgLabs/lab4-4/calculate.h">
 			<Option target="lab4_4"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/lab4-4/convert.c">
+		<Unit filename="H:/NSUProgLabs/lab4-4/convert.c">
 			<Option target="lab4_4"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/lab4-4/convert.h">
+		<Unit filename="H:/NSUProgLabs/lab4-4/convert.h">
 			<Option target="lab4_4"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/lab4-4/definitions.h">
+		<Unit filename="H:/NSUProgLabs/lab4-4/definitions.h">
 			<Option target="lab4_4"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/lab4-4/main.c">
+		<Unit filename="H:/NSUProgLabs/lab4-4/main.c">
 			<Option target="lab4_4"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/lab4-4/stack.c">
+		<Unit filename="H:/NSUProgLabs/lab4-4/stack.c">
 			<Option target="lab4_4"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/lab4-4/stack.h">
+		<Unit filename="H:/NSUProgLabs/lab4-4/stack.h">
 			<Option target="lab4_4"/>
 		</Unit>
-		<Unit filename="E:/CLionProjects/lab4-4/CMakeLists.txt">
+		<Unit filename="H:/NSUProgLabs/lab4-4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

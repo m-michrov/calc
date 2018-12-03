@@ -4,7 +4,6 @@
 #define LAB4_4_CONVERT_H
 
 #include <ctype.h>
-#include <string.h>
 #include <malloc.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -33,6 +32,7 @@ int priority(
 bool associativity(
         char operator);
 
-TElement * convertToPostfix(char *string);
+TElement * convertToPostfix(
+        char *string);
 
 #endif //LAB4_4_CONVERT_H

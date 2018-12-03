@@ -7,13 +7,13 @@
 
 typedef struct TElement {
     int value;
-    bool is_operator;
+    bool type;
 } TElement;
 
 unsigned int push(
         TElement *list,
         unsigned int stack_pos,
         int value,
-        bool is_operator);
+        bool type);
 
 #endif //LAB4_4_STACK_H
