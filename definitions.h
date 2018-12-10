@@ -21,4 +21,4 @@
 #define LEFT  false
 #define RIGHT true
 
-#endif //LAB4_4_DEFINITIONS_H
+#endif

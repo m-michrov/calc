@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = H:\NSUProgLabs\lab4-4
+CMAKE_SOURCE_DIR = H:\NSUProgLabs\calc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = H:\NSUProgLabs\lab4-4\cmake-build-debug
+CMAKE_BINARY_DIR = H:\NSUProgLabs\calc\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start H:\NSUProgLabs\lab4-4\cmake-build-debug\CMakeFiles H:\NSUProgLabs\lab4-4\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start H:\NSUProgLabs\calc\cmake-build-debug\CMakeFiles H:\NSUProgLabs\calc\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start H:\NSUProgLabs\lab4-4\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start H:\NSUProgLabs\calc\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab4_4
+# Target rules for targets named calc
 
 # Build rule for target.
-lab4_4: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 lab4_4
-.PHONY : lab4_4
+calc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 calc
+.PHONY : calc
 
 # fast build rule for target.
-lab4_4/fast:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/build
-.PHONY : lab4_4/fast
+calc/fast:
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/build
+.PHONY : calc/fast
 
 calculate.obj: calculate.c.obj
 
@@ -128,7 +128,7 @@ calculate.obj: calculate.c.obj
 
 # target to build an object file
 calculate.c.obj:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/calculate.c.obj
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/calculate.c.obj
 .PHONY : calculate.c.obj
 
 calculate.i: calculate.c.i
@@ -137,7 +137,7 @@ calculate.i: calculate.c.i
 
 # target to preprocess a source file
 calculate.c.i:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/calculate.c.i
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/calculate.c.i
 .PHONY : calculate.c.i
 
 calculate.s: calculate.c.s
@@ -146,7 +146,7 @@ calculate.s: calculate.c.s
 
 # target to generate assembly for a file
 calculate.c.s:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/calculate.c.s
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/calculate.c.s
 .PHONY : calculate.c.s
 
 convert.obj: convert.c.obj
@@ -155,7 +155,7 @@ convert.obj: convert.c.obj
 
 # target to build an object file
 convert.c.obj:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/convert.c.obj
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/convert.c.obj
 .PHONY : convert.c.obj
 
 convert.i: convert.c.i
@@ -164,7 +164,7 @@ convert.i: convert.c.i
 
 # target to preprocess a source file
 convert.c.i:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/convert.c.i
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/convert.c.i
 .PHONY : convert.c.i
 
 convert.s: convert.c.s
@@ -173,7 +173,7 @@ convert.s: convert.c.s
 
 # target to generate assembly for a file
 convert.c.s:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/convert.c.s
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/convert.c.s
 .PHONY : convert.c.s
 
 main.obj: main.c.obj
@@ -182,7 +182,7 @@ main.obj: main.c.obj
 
 # target to build an object file
 main.c.obj:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/main.c.obj
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -191,7 +191,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/main.c.i
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -200,7 +200,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/main.c.s
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/main.c.s
 .PHONY : main.c.s
 
 stack.obj: stack.c.obj
@@ -209,7 +209,7 @@ stack.obj: stack.c.obj
 
 # target to build an object file
 stack.c.obj:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/stack.c.obj
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/stack.c.obj
 .PHONY : stack.c.obj
 
 stack.i: stack.c.i
@@ -218,7 +218,7 @@ stack.i: stack.c.i
 
 # target to preprocess a source file
 stack.c.i:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/stack.c.i
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/stack.c.i
 .PHONY : stack.c.i
 
 stack.s: stack.c.s
@@ -227,7 +227,7 @@ stack.s: stack.c.s
 
 # target to generate assembly for a file
 stack.c.s:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/stack.c.s
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/stack.c.s
 .PHONY : stack.c.s
 
 # Help Target
@@ -236,7 +236,7 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... lab4_4
+	@echo ... calc
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... calculate.obj

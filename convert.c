@@ -35,10 +35,10 @@ bool associativity(
     }
 }
 
-TElement * convertToPostfix(
+Element * convertToPostfix(
         char *string)
 {
-    TElement *list = malloc(BLOCK_SIZE * sizeof(TElement));
+    Element *list = malloc(BLOCK_SIZE * sizeof(Element));
 
     if (list == NULL)
         MEMORY_ERROR;
@@ -58,7 +58,7 @@ TElement * convertToPostfix(
             if (last_item == LAST_NUMBER || last_item == LAST_CLOSE_BRACKET)
                 SYNTAX_ERROR;
 
-            unsigned int number = 0;
+            unsigned long number = 0;
 
 
             while (isdigit(string[position])) {
@@ -87,7 +87,7 @@ TElement * convertToPostfix(
                 if (decimal_count == 0)
                     SYNTAX_ERROR;
 
-                // writing rational number in the Scientific notation ( a / 10^k ) in Postfix notation ( a 10 k ^ / )
+                //  a / 10^k -> a 10 k ^ /
 
                 list_position = push(list, list_position, number, NUMBER);
 

@@ -1,7 +1,7 @@
 #include "calculate.h"
 
 double calculatePostfix(
-        TElement * list)
+        Element * list)
 {
 
     if (list == NULL)

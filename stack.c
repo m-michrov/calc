@@ -1,13 +1,13 @@
 #include "stack.h"
 
 unsigned int push(
-        TElement *list,
+        Element *list,
         unsigned int stack_pos,
-        int value,
+        unsigned long value,
         bool type)
 {
 
-    TElement item = { value, type };
+    Element item = { value, type };
 
     list[stack_pos] = item;
 

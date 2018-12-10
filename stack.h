@@ -6,14 +6,14 @@
 #include <stdbool.h>
 
 typedef struct TElement {
-    int value;
+    unsigned long value;
     bool type;
-} TElement;
+} Element;
 
 unsigned int push(
-        TElement *list,
+        Element *list,
         unsigned int stack_pos,
-        int value,
+        unsigned long value,
         bool type);
 
-#endif //LAB4_4_STACK_H
+#endif

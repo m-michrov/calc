@@ -11,8 +11,8 @@
 
 #include "stack.h"
 
-#define SYNTAX_ERROR {printf("syntax error\n"); free(list); exit(EXIT_SUCCESS);}
-#define MEMORY_ERROR {printf("memory error\n"); free(list); exit(EXIT_SUCCESS);}
+#define SYNTAX_ERROR {printf("syntax error\n"); exit(EXIT_SUCCESS);}
+#define MEMORY_ERROR {printf("memory error\n"); exit(EXIT_SUCCESS);}
 
 typedef enum ItemType {
     LAST_START_FILE,
@@ -32,7 +32,7 @@ int priority(
 bool associativity(
         char operator);
 
-TElement * convertToPostfix(
+Element * convertToPostfix(
         char *string);
 
-#endif //LAB4_4_CONVERT_H
+#endif

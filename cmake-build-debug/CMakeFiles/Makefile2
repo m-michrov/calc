@@ -58,45 +58,45 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = H:\NSUProgLabs\lab4-4
+CMAKE_SOURCE_DIR = H:\NSUProgLabs\calc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = H:\NSUProgLabs\lab4-4\cmake-build-debug
+CMAKE_BINARY_DIR = H:\NSUProgLabs\calc\cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/lab4_4.dir
+# Target rules for target CMakeFiles/calc.dir
 
 # All Build rule for target.
-CMakeFiles/lab4_4.dir/all:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/depend
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=H:\NSUProgLabs\lab4-4\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target lab4_4"
-.PHONY : CMakeFiles/lab4_4.dir/all
+CMakeFiles/calc.dir/all:
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/depend
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=H:\NSUProgLabs\calc\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target calc"
+.PHONY : CMakeFiles/calc.dir/all
 
 # Include target in all.
-all: CMakeFiles/lab4_4.dir/all
+all: CMakeFiles/calc.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/lab4_4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start H:\NSUProgLabs\lab4-4\cmake-build-debug\CMakeFiles 5
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/lab4_4.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start H:\NSUProgLabs\lab4-4\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/lab4_4.dir/rule
+CMakeFiles/calc.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start H:\NSUProgLabs\calc\cmake-build-debug\CMakeFiles 5
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/calc.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start H:\NSUProgLabs\calc\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/calc.dir/rule
 
 # Convenience name for target.
-lab4_4: CMakeFiles/lab4_4.dir/rule
+calc: CMakeFiles/calc.dir/rule
 
-.PHONY : lab4_4
-
-# clean rule for target.
-CMakeFiles/lab4_4.dir/clean:
-	$(MAKE) -f CMakeFiles\lab4_4.dir\build.make CMakeFiles/lab4_4.dir/clean
-.PHONY : CMakeFiles/lab4_4.dir/clean
+.PHONY : calc
 
 # clean rule for target.
-clean: CMakeFiles/lab4_4.dir/clean
+CMakeFiles/calc.dir/clean:
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/clean
+.PHONY : CMakeFiles/calc.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/calc.dir/clean
 
 .PHONY : clean
 

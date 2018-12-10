@@ -10,11 +10,14 @@ int main(void) {
 
     fgets(input, BLOCK_SIZE, stdin);
 
-    TElement * postfix = convertToPostfix(input);
+    Element * postfix = convertToPostfix(input);
 
     double result = calculatePostfix(postfix);
 
-    printf("%3.3lf", result);
+    if (fabs(result) - (int)fabs(result) < 0.001)
+        printf("%d", (int)result);
+    else
+        printf("%3.3lf", result);
 
     return 0;
 }
