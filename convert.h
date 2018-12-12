@@ -23,13 +23,13 @@ typedef enum ItemType {
 
 } ItemType;
 
-bool is_operator(
+static bool is_operator(
         char c);
 
-int priority(
+static int priority(
         char operator);
 
-bool associativity(
+static bool associativity(
         char operator);
 
 Element * convertToPostfix(

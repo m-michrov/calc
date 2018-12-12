@@ -7,9 +7,8 @@ unsigned int push(
         bool type)
 {
 
-    Element item = { value, type };
-
-    list[stack_pos] = item;
+    list[stack_pos].value = value;
+    list[stack_pos].type = type;
 
     stack_pos++;
 

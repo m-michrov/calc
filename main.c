@@ -14,10 +14,10 @@ int main(void) {
 
     double result = calculatePostfix(postfix);
 
-    if (fabs(result) - (int)fabs(result) < 0.001)
-        printf("%d", (int)result);
+    if (fabs(result - round(result)) < 0.00001)
+        printf("%d", (int)round(result));
     else
-        printf("%3.3lf", result);
+        printf("%.5lf", result);
 
     return 0;
 }

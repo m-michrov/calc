@@ -1,13 +1,13 @@
 #include "convert.h"
 #include "definitions.h"
 
-bool is_operator(
+static bool is_operator(
         char c)
 {
     return (c == ADD) || (c == SUB) || (c == MUL) || (c == DIV) || (c == POW);
 }
 
-int priority(
+static int priority(
         char operator)
 {
     switch (operator) {
@@ -24,7 +24,7 @@ int priority(
     }
 }
 
-bool associativity(
+static bool associativity(
         char operator)
 {
     switch (operator) {

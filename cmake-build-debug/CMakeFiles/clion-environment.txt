@@ -1,4 +1,4 @@
-ToolSet: w64 5.0@C:\Program Files\Haskell Platform\8.4.3\mingw
+ToolSet: w64 3.3@E:\Win-builds
 Options: 
 
 Options:
