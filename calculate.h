@@ -13,6 +13,6 @@
 #define DIVISION_ERROR {printf("division by zero\n"); exit(EXIT_SUCCESS);}
 
 double calculatePostfix(
-        Element * list);
+        Token * list);
 
 #endif

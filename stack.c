@@ -1,7 +1,7 @@
 #include "stack.h"
 
 unsigned int push(
-        Element *list,
+        Token *list,
         unsigned int stack_pos,
         unsigned long value,
         bool type)

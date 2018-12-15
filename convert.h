@@ -32,7 +32,7 @@ static int priority(
 static bool associativity(
         char operator);
 
-Element * convertToPostfix(
+Token * convertToPostfix(
         char *string);
 
 #endif

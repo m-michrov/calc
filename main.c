@@ -10,7 +10,7 @@ int main(void) {
 
     fgets(input, BLOCK_SIZE, stdin);
 
-    Element * postfix = convertToPostfix(input);
+    Token * postfix = convertToPostfix(input);
 
     double result = calculatePostfix(postfix);
 

@@ -35,10 +35,10 @@ static bool associativity(
     }
 }
 
-Element * convertToPostfix(
+Token * convertToPostfix(
         char *string)
 {
-    Element *list = malloc(BLOCK_SIZE * sizeof(Element));
+    Token *list = malloc(BLOCK_SIZE * sizeof(Token));
 
     if (list == NULL)
         MEMORY_ERROR;

@@ -5,13 +5,13 @@
 
 #include <stdbool.h>
 
-typedef struct TElement {
+typedef struct st_Token {
     unsigned long value;
     bool type;
-} Element;
+} Token;
 
 unsigned int push(
-        Element *list,
+        Token *list,
         unsigned int stack_pos,
         unsigned long value,
         bool type);
