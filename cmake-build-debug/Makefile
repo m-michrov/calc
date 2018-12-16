@@ -203,32 +203,32 @@ main.c.s:
 	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/main.c.s
 .PHONY : main.c.s
 
-stack.obj: stack.c.obj
+struct.obj: struct.c.obj
 
-.PHONY : stack.obj
+.PHONY : struct.obj
 
 # target to build an object file
-stack.c.obj:
-	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/stack.c.obj
-.PHONY : stack.c.obj
+struct.c.obj:
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/struct.c.obj
+.PHONY : struct.c.obj
 
-stack.i: stack.c.i
+struct.i: struct.c.i
 
-.PHONY : stack.i
+.PHONY : struct.i
 
 # target to preprocess a source file
-stack.c.i:
-	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/stack.c.i
-.PHONY : stack.c.i
+struct.c.i:
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/struct.c.i
+.PHONY : struct.c.i
 
-stack.s: stack.c.s
+struct.s: struct.c.s
 
-.PHONY : stack.s
+.PHONY : struct.s
 
 # target to generate assembly for a file
-stack.c.s:
-	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/stack.c.s
-.PHONY : stack.c.s
+struct.c.s:
+	$(MAKE) -f CMakeFiles\calc.dir\build.make CMakeFiles/calc.dir/struct.c.s
+.PHONY : struct.c.s
 
 # Help Target
 help:
@@ -248,9 +248,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... stack.obj
-	@echo ... stack.i
-	@echo ... stack.s
+	@echo ... struct.obj
+	@echo ... struct.i
+	@echo ... struct.s
 .PHONY : help
 
 

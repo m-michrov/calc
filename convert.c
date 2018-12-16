@@ -35,158 +35,198 @@ static bool associativity(
     }
 }
 
+static unsigned int handleNumber(
+        TBuffer * buffer,
+        const char * string,
+        unsigned int position)
+{
+    if (buffer->last_item == LAST_NUMBER || buffer->last_item == LAST_CLOSE_BRACKET)
+    SYNTAX_ERROR;
+
+    unsigned long number = 0;
+
+
+    while (isdigit(string[position])) {
+
+        number *= 10;
+        number += string[position] - '0';
+
+        position++;
+    }
+
+    if (string[position] == DOT) {
+        position++;
+
+        unsigned int decimal_count = 0;
+
+        while (isdigit(string[position])) {
+
+            number *= 10;
+            number += string[position] - '0';
+
+            decimal_count++;
+
+            position++;
+        }
+
+        if (decimal_count == 0)
+        SYNTAX_ERROR;
+
+        //  a / 10^k -> a 10 k ^ /
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, number, NUMBER);
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, 10, NUMBER);
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, decimal_count, NUMBER);
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, POW, OPERATOR);
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, DIV, OPERATOR);
+
+    }
+    else {
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, number, NUMBER);
+
+    }
+
+    position--;
+
+    buffer->last_item = LAST_NUMBER;
+
+    return position;
+}
+
+static void handleOperator(
+        TBuffer * buffer,
+        const char operator)
+{
+    if (buffer->last_item == LAST_START_FILE || buffer->last_item == LAST_OPEN_BRACKET) {
+
+        if (operator == ADD || operator == SUB) {
+
+            buffer->list_position = push(buffer->result_array, buffer->list_position, 0, NUMBER);
+
+        }
+        else
+        SYNTAX_ERROR;
+    }
+
+    if (buffer->last_item == LAST_OPERATOR)
+    SYNTAX_ERROR;
+
+    while (priority(operator) < priority(buffer->operator_stack[buffer->operator_stack_len - 1]) ||
+           (priority(operator) == priority(buffer->operator_stack[buffer->operator_stack_len - 1]) &&
+            associativity(buffer->operator_stack[buffer->operator_stack_len - 1]) == LEFT)) {
+
+        buffer->operator_stack_len--;
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, (unsigned char)buffer->operator_stack[buffer->operator_stack_len], OPERATOR);
+    }
+
+    buffer->operator_stack[buffer->operator_stack_len] = operator;
+
+    buffer->operator_stack_len++;
+
+    buffer->last_item = LAST_OPERATOR;
+}
+
+static void handleOpenBracket(
+        TBuffer * buffer)
+{
+    if (buffer->last_item == LAST_NUMBER)
+    SYNTAX_ERROR;
+
+    buffer->operator_stack[buffer->operator_stack_len] = OPEN_BRACKET;
+
+    buffer->operator_stack_len++;
+
+    buffer->last_item = LAST_OPEN_BRACKET;
+}
+
+static void handleCloseBracket(
+        TBuffer * buffer)
+{
+    if (buffer->last_item == LAST_OPEN_BRACKET)
+    SYNTAX_ERROR;
+
+    if (buffer->last_item == LAST_OPERATOR)
+    SYNTAX_ERROR;
+
+    bool found = false;
+
+    while (buffer->operator_stack_len > 0) {
+
+        if (buffer->operator_stack[buffer->operator_stack_len - 1] == OPEN_BRACKET) {
+            found = true;
+            break;
+        }
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, (unsigned char)buffer->operator_stack[buffer->operator_stack_len - 1], OPERATOR);
+
+        buffer->operator_stack_len--;
+    }
+
+    if (!found)
+    SYNTAX_ERROR;
+
+    buffer->operator_stack_len--;
+
+    buffer->last_item = LAST_CLOSE_BRACKET;
+}
+
+static void handleRest(
+        TBuffer * buffer,
+        unsigned int position)
+{
+    if (buffer->last_item == LAST_OPERATOR || !position)
+    SYNTAX_ERROR;
+
+    while (buffer->operator_stack_len > 1) {
+
+        if (buffer->operator_stack[buffer->operator_stack_len - 1] == OPEN_BRACKET)
+        SYNTAX_ERROR;
+
+        buffer->operator_stack_len--;
+
+        buffer->list_position = push(buffer->result_array, buffer->list_position, (unsigned char)buffer->operator_stack[buffer->operator_stack_len], OPERATOR);
+    }
+
+    push(buffer->result_array, buffer->list_position, 0, OPERATOR);
+}
+
 Token * convertToPostfix(
         char *string)
 {
-    Token *list = malloc(BLOCK_SIZE * sizeof(Token));
-
-    if (list == NULL)
-        MEMORY_ERROR;
-
     char operator_stack[BLOCK_SIZE] = { 0 };
 
-    unsigned int list_position = 0;
     unsigned int position = 0;
-    unsigned int operator_stack_len = 1;
 
-    ItemType last_item = LAST_START_FILE;
+    Token * result_array = malloc(BLOCK_SIZE * sizeof(Token));
 
-    while (string[position] != '\n') {
+    if (result_array == NULL)
+        MEMORY_ERROR;
 
-        if (isdigit(string[position])) { // handling numbers
+    TBuffer buffer = {0, 1, LAST_START_FILE, result_array, operator_stack};
 
-            if (last_item == LAST_NUMBER || last_item == LAST_CLOSE_BRACKET)
-                SYNTAX_ERROR;
+    while (string[position] != '\0' && string[position] != '\n') {
 
-            unsigned long number = 0;
+        if (isdigit(string[position]))
 
+            position = handleNumber(&buffer, string, position);
 
-            while (isdigit(string[position])) {
+        else if (is_operator(string[position]))
 
-                number *= 10;
-                number += string[position] - '0';
+            handleOperator(&buffer, string[position]);
 
-                position++;
-            }
+        else if (string[position] == OPEN_BRACKET)
 
-            if (string[position] == DOT) { // handling rational number
-                position++;
+            handleOpenBracket(&buffer);
 
-                unsigned int decimal_count = 0;
+        else if (string[position] == CLOSE_BRACKET)
 
-                while (isdigit(string[position])) {
-
-                    number *= 10;
-                    number += string[position] - '0';
-
-                    decimal_count++;
-
-                    position++;
-                }
-
-                if (decimal_count == 0)
-                    SYNTAX_ERROR;
-
-                //  a / 10^k -> a 10 k ^ /
-
-                list_position = push(list, list_position, number, NUMBER);
-
-                list_position = push(list, list_position, 10, NUMBER);
-
-                list_position = push(list, list_position, decimal_count, NUMBER);
-
-                list_position = push(list, list_position, POW, OPERATOR);
-
-                list_position = push(list, list_position, DIV, OPERATOR);
-
-            }
-            else {
-
-                list_position = push(list, list_position, number, NUMBER);
-
-            }
-
-            position--;
-
-            last_item = LAST_NUMBER;
-
-        }
-
-        else if (is_operator(string[position])) {
-
-            if (last_item == LAST_START_FILE || last_item == LAST_OPEN_BRACKET) {
-
-                if (string[position] == ADD || string[position] == SUB) {
-
-                    list_position = push(list, list_position, 0, NUMBER);
-
-                }
-                else
-                    SYNTAX_ERROR;
-            }
-
-            if (last_item == LAST_OPERATOR)
-                SYNTAX_ERROR;
-
-            while (priority(string[position]) < priority(operator_stack[operator_stack_len - 1]) ||
-                   (priority(string[position]) == priority(operator_stack[operator_stack_len - 1]) &&
-                    associativity(operator_stack[operator_stack_len - 1]) == LEFT)) {
-
-                operator_stack_len--;
-
-                list_position = push(list, list_position, operator_stack[operator_stack_len], OPERATOR);
-            }
-
-            operator_stack[operator_stack_len] = string[position];
-
-            operator_stack_len++;
-
-            last_item = LAST_OPERATOR;
-        }
-
-        else if (string[position] == OPEN_BRACKET) {
-
-            if (last_item == LAST_NUMBER)
-                SYNTAX_ERROR;
-
-            operator_stack[operator_stack_len] = string[position];
-
-            operator_stack_len++;
-
-            last_item = LAST_OPEN_BRACKET;
-
-        }
-
-        else if (string[position] == CLOSE_BRACKET) {
-
-            if (last_item == LAST_OPEN_BRACKET)
-                SYNTAX_ERROR;
-
-            if (last_item == LAST_OPERATOR)
-                SYNTAX_ERROR;
-
-            bool found = false;
-
-            while (operator_stack_len > 0) {
-
-                if (operator_stack[operator_stack_len - 1] == OPEN_BRACKET) {
-                    found = true;
-                    break;
-                }
-
-                list_position = push(list, list_position, operator_stack[operator_stack_len - 1], OPERATOR);
-
-                operator_stack_len--;
-            }
-
-            if (!found)
-                SYNTAX_ERROR;
-
-            operator_stack_len--;
-
-            last_item = LAST_CLOSE_BRACKET;
-
-        }
+            handleCloseBracket(&buffer);
 
         else if (string[position] == SPACE)
             ;
@@ -197,21 +237,8 @@ Token * convertToPostfix(
         position++;
     }
 
-    if (last_item == LAST_OPERATOR || !position)
-        SYNTAX_ERROR;
+    handleRest(&buffer, position);
 
-    while (operator_stack_len > 1) {
-
-        if (operator_stack[operator_stack_len - 1] == OPEN_BRACKET)
-            SYNTAX_ERROR;
-
-        operator_stack_len--;
-
-        list_position = push(list, list_position, operator_stack[operator_stack_len], OPERATOR);
-    }
-
-    push(list, list_position, 0, OPERATOR);
-
-    return list;
+    return result_array;
 
 }

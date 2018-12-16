@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "stack.h"
+#include "struct.h"
 #include "convert.h"
 #include "definitions.h"
 

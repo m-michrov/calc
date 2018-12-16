@@ -4,6 +4,16 @@
 #include "convert.h"
 #include "calculate.h"
 
+static void pprint(
+        double value,
+        double precision)
+{
+    if (fabs(value - round(value)) < precision)
+        printf("%d\n", (int)round(value));
+    else
+        printf("%.*lf\n", (int)fabs(log10(precision)), value);
+}
+
 int main(void) {
 
     char input[BLOCK_SIZE];
@@ -14,10 +24,7 @@ int main(void) {
 
     double result = calculatePostfix(postfix);
 
-    if (fabs(result - round(result)) < 0.00001)
-        printf("%d", (int)round(result));
-    else
-        printf("%.5lf", result);
+    pprint(result, 0.001);
 
     return 0;
 }

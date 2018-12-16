@@ -3,4 +3,4 @@ project(calc C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(calc main.c convert.c definitions.h convert.h stack.h stack.c calculate.h calculate.c)
+add_executable(calc main.c convert.c definitions.h convert.h struct.h struct.c calculate.h calculate.c)

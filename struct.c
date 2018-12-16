@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "struct.h"
 
 unsigned int push(
         Token *list,
