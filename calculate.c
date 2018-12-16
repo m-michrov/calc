@@ -11,10 +11,11 @@ double calculatePostfix(
 
     unsigned int operand_stack_len = 0;
     unsigned int stack_position = 0;
+
     double first_operand;
     double second_operand;
 
-    while (!(list[stack_position].type == OPERATOR && list[stack_position].value == 0)) {
+    while (list[stack_position].type != OPERATOR || list[stack_position].value != 0) {
 
 
         if (list[stack_position].type == NUMBER) {
