@@ -7,7 +7,7 @@ double calculatePostfix(
     if (list == NULL)
         MEMORY_ERROR;
 
-    double operand_stack[BLOCK_SIZE];
+    double operand_stack[BLOCK_SIZE] = { 0.0 };
 
     unsigned int operand_stack_len = 0;
     unsigned int stack_position = 0;
