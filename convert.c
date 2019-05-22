@@ -206,33 +206,39 @@ Token * convertToPostfix(
     Token * result_array = malloc(BLOCK_SIZE * sizeof(Token));
 
     if (result_array == NULL)
-        MEMORY_ERROR;
+    {
+        return NULL;
+    }
 
     TBuffer buffer = {0, 1, LAST_START_FILE, result_array, operator_stack};
 
-    while (string[position] != '\0' && string[position] != '\n') {
+    while (string[position] != '\0' && string[position] != '\n')
+    {
 
         if (isdigit(string[position]))
-
+        {
             position = handleNumber(&buffer, string, position);
-
+        }
         else if (is_operator(string[position]))
-
+        {
             handleOperator(&buffer, string[position]);
-
+        }
         else if (string[position] == OPEN_BRACKET)
-
+        {
             handleOpenBracket(&buffer);
-
+        }
         else if (string[position] == CLOSE_BRACKET)
-
+        {
             handleCloseBracket(&buffer);
-
+        }
         else if (string[position] == SPACE)
+        {
             ;
-
+        }
         else
+        {
             SYNTAX_ERROR;
+        }
 
         position++;
     }

@@ -1,30 +1,47 @@
 #include <stdio.h>
 
+
 #include "definitions.h"
 #include "convert.h"
 #include "calculate.h"
 
+
 static void pprint(
         double value,
-        double precision)
-{
+        double precision) {
     if (fabs(value - round(value)) < precision)
-        printf("%d\n", (int)round(value));
+    {
+        printf("%d\n", (int) round(value));
+    }
     else
-        printf("%.*lf\n", (int)fabs(log10(precision)), value);
+    {
+        printf("%.*lf\n", (int) fabs(log10(precision)), value);
+    }
 }
 
-int main(void) {
 
+int main(
+        void)
+{
     char input[BLOCK_SIZE];
+    Token * postfix;
+    double result;
 
-    fgets(input, BLOCK_SIZE, stdin);
+    while (true)
+    {
+        fgets(input, BLOCK_SIZE, stdin);
 
-    Token * postfix = convertToPostfix(input);
+        if (feof(stdin))
+        {
+            return 0;
+        }
 
-    double result = calculatePostfix(postfix);
+        postfix = convertToPostfix(input);
 
-    pprint(result, 0.001);
+        result = calculatePostfix(postfix);
 
-    return 0;
+        free(postfix);
+
+        pprint(result, 0.001);
+    }
 }

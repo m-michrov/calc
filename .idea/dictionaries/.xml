@@ -2,6 +2,7 @@
   <dictionary name="Мичуров">
     <words>
       <w>printf</w>
+      <w>struct</w>
     </words>
   </dictionary>
 </component>

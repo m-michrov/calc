@@ -3,9 +3,12 @@
 #ifndef LAB4_4_STRUCT_H
 #define LAB4_4_STRUCT_H
 
+
 #include <stdbool.h>
 
-typedef enum ItemType {
+
+typedef enum ItemType
+{
     LAST_START_FILE,
     LAST_NUMBER,
     LAST_OPEN_BRACKET,
@@ -14,12 +17,16 @@ typedef enum ItemType {
 
 } ItemType;
 
-typedef struct st_Token {
+
+typedef struct st_Token
+{
     unsigned long value;
     bool type;
 } Token;
 
-typedef struct st_Buff {
+
+typedef struct st_Buff
+{
     unsigned int list_position;
     unsigned int operator_stack_len;
 
@@ -29,10 +36,12 @@ typedef struct st_Buff {
     char * operator_stack;
 } TBuffer;
 
+
 unsigned int push(
         Token *list,
         unsigned int stack_pos,
         unsigned long value,
         bool type);
+
 
 #endif
